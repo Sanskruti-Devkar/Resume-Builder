@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+	<style>
+	
+	</style>
+</head>
+	<body>
+		<section class="flex head-section">
+			<div class="top-section">
+				<img src="https://cdn-icons-png.flaticon.com/512/4537/4537097.png">
+			</div>
+			<div class="head-name">
+				<h1>Sanskruti Dnyaneshwar Devkar</h1>
+				<h2> BSc (Bachelor of Science)in Education</h2>
+			</div>
+		</section>
+				
+			<div class="container">
+
+				<!-- Left Column -->
+				<div class="left">
+					<h2>Contacts</h2>
+				<div id="formSection">
+
+					<input type="text" id="name" placeholder="Full Name">
+
+					<input type="email" id="email" placeholder="Email">
+
+					<input type="text" id="phone" placeholder="Phone Number">
+
+					<input type="text" id="address" placeholder="Address">
+
+					<input type="text" id="linkedin" placeholder="LinkedIn Profile">
+
+					<input type="text" id="github" placeholder="GitHub Profile">
+					
+					<div>
+					<h2>Languages</h2>
+					<input type="text" id="marathi" placeholder="Marathi">
+
+					<input type="text" id="hindi" placeholder="Hindi">
+
+					<input type="text" id="english" placeholder="English">
+				</div>
+				<div>
+					<h2>Interested</h2>
+						<input type="text" id="learn" placeholder="Learning New Things">
+
+						<input type="text" id="dance" placeholder="Dancing">
+
+						<input type="text" id="cook" placeholder="Cooking">
+						
+						<input type="text" id="write" placeholder="writing">
+						
+				</div>
+				
+				<div>
+					<h2>TECHNICAL SKILLS</h2>
+						<input type="text" id="learn" placeholder="Technical Skill-1">
+
+						<input type="text" id="dance" placeholder="Technical Skill-2">
+
+						<input type="text" id="cook" placeholder="Technical Skill-3">
+						
+						<input type="text" id="write" placeholder="Technical Skill-4">
+						
+				</div>
+
+					<button onclick="contacts()">
+						Generate Resume
+					</button>
+
+				</div>
+
+
+				<div id="displaySection" style="display:none;">
+
+					<h2 id="rname"></h2>
+
+					<p id="remail"></p>
+
+					<p id="rphone"></p>
+
+					<p id="raddress"></p>
+
+					<p id="rlinkedin"></p>
+
+					<p id="rgithub"></p>
+					
+					<div>
+						<h2>Languages</h2>
+							<p id="rmarathi"></p>
+							<p id="rhindi"></p>
+							<p id="renglish"></p>
+					</div>
+					<div>
+						<h2>Interested</h2>
+							<p id="rlearn"></p>
+							<p id="rdance"></p>
+							<p id="rcook"></p>
+							<p id="rwrite"></p>
+						
+					</div>
+
+				</div>
+				
+				
+
+			</div>
+
+
+			<!-- Right Column -->
+				<div class="right">
+					<div id="eduCation">
+					<h2>PROFESSIONAL SUMMARY</h2>
+
+					<textarea id="summary"></textarea>
+
+					<h2>EDUCATION</h2>
+
+					<input type="text" id="degree"
+						placeholder="Degree">
+
+					<input type="text" id="college"
+						placeholder="College / University">
+
+					<input type="text" id="cgpa"
+						placeholder="CGPA">
+
+					<input type="text" id="year"
+						placeholder="Graduation Year">
+
+					<h2>PROJECTS</h2>
+
+					<input type="text" id="project1"
+						placeholder="Project 1 Title">
+
+					<textarea id="project1desc"
+						placeholder="Project 1 Description"></textarea>
+
+					<input type="text" id="secondp"
+						placeholder="Project 2 Title">
+
+					<textarea id="content"
+						placeholder="Project 2 Description"></textarea>
+
+					<h2>EXPERIENCE</h2>
+
+					<input type="text" id="company"
+						placeholder="Company Name">
+
+					<input type="text" id="position"
+						placeholder="Job Position">
+
+					<textarea id="experience"
+						placeholder="Experience Description"></textarea>
+
+					<!--<h2>CERTIFICATIONS</h2>
+
+					<input type="text" id="certificate1"
+						placeholder="Certification 1">
+
+					<input type="text" id="twocer"
+						placeholder="Certification 2">
+
+					<h2>ACHIEVEMENTS</h2>
+
+					<input type="text" id="achievement1"
+						placeholder="Achievement 1">
+
+					<input type="text" id="achsec"
+						placeholder="Achievement 2">-->
+
+					<br><br>
+
+					<button onclick="generateResume()">
+						Generate Resume
+					</button>
+					</div>
+					
+					<div id="educationBlock" style="display:none;">
+						<div>
+							<h2>PROFESSIONAL SUMMARY</h2>
+								<p id="rsummary"></p>
+						</div>
+						<div>
+							<h2>EDUCATION</h2>
+							<span><b>Degree:</b></span><span id="rdegree"></span><br><br>
+							<span><b>College:</b></span><span id="rcollege"></span><br><br>
+							<span><b>Percentage:</b></span><span id="rcgpa"></span><br><br>
+							<span><b>Year:</b></span><p id="ryear"></p><br><br>
+						</div>
+							<h2>PROJECTS</h2>
+							<span><b>Title:</b></span><span id="rproject1"></span><br><br>	
+							<span><b>Description:</b></span><span id="rproject1desc"></span><br><br>	
+							<span><b>Title:</b></span><span id="rsecondp"></span><br><br>
+							<span><b>Description:</b></span><span id="rcontent"></span><br><br>	
+								
+						<div>
+							<h2>EXPERIENCE</h2>
+							<span><b>Company:</b></span><span id="rcompany"></span><br><br>	
+							<span><b>Position:</b></span><span id="rposition"></span><br><br>	
+							<span><b>Experience:</b></span><span id="rexperience"></span><br><br>	
+						</div>
+						
+						
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<script>
+			function contacts() {
+
+				document.getElementById("rname").innerHTML =
+				document.getElementById("name").value;
+
+				document.getElementById("remail").innerHTML =
+				document.getElementById("email").value;
+
+				document.getElementById("rphone").innerHTML =
+				document.getElementById("phone").value;
+
+				document.getElementById("raddress").innerHTML =
+				document.getElementById("address").value;
+
+				document.getElementById("rlinkedin").innerHTML =
+				document.getElementById("linkedin").value;
+
+				document.getElementById("rgithub").innerHTML =
+				document.getElementById("github").value;
+				
+				document.getElementById("rmarathi").innerHTML =
+				document.getElementById("marathi").value;
+				
+				document.getElementById("rhindi").innerHTML =
+				document.getElementById("hindi").value;
+				
+				document.getElementById("renglish").innerHTML =
+				document.getElementById("english").value;
+				
+				// Interested
+				
+				document.getElementById("rlearn").innerHTML =
+				document.getElementById("learn").value;
+				
+				document.getElementById("rdance").innerHTML =
+				document.getElementById("dance").value;
+				
+				document.getElementById("rcook").innerHTML =
+				document.getElementById("cook").value;
+				
+				document.getElementById("rwrite").innerHTML =
+				document.getElementById("write").value;
+				
+
+				// Hide the form
+				document.getElementById("formSection").style.display = "none";
+
+				// Show the resume information
+				document.getElementById("displaySection").style.display = "block";
+				}
+				
+				function generateResume(){
+				// Right Section
+				
+				document.getElementById("rsummary").innerHTML =
+				document.getElementById("summary").value;
+				
+				document.getElementById("rdegree").innerHTML =
+				document.getElementById("degree").value;
+				
+				document.getElementById("rcollege").innerHTML =
+				document.getElementById("college").value;
+				
+				document.getElementById("rcgpa").innerHTML =
+				document.getElementById("cgpa").value;
+				
+				document.getElementById("ryear").innerHTML =
+				document.getElementById("year").value;
+				
+				//PROJECTS
+				document.getElementById("rproject1").innerHTML =
+				document.getElementById("project1").value;
+				
+				document.getElementById("rproject1desc").innerHTML =
+				document.getElementById("project1desc").value;
+				
+				document.getElementById("rsecondp").innerHTML =
+				document.getElementById("secondp").value;
+				
+				document.getElementById("rcontent").innerHTML =
+				document.getElementById("content").value;
+				
+				// EXPERIENCE
+				document.getElementById("rcompany").innerHTML =
+				document.getElementById("company").value;
+				
+				document.getElementById("rposition").innerHTML =
+				document.getElementById("position").value;
+				
+				document.getElementById("rexperience").innerHTML =
+				document.getElementById("experience").value;
+				
+				
+				
+				
+				//right side Hide the form
+				document.getElementById("eduCation").style.display = "none";
+
+				// Show the resume information
+				document.getElementById("educationBlock").style.display = "block";
+				
+				}
+
+			
+			</script>
+			
+
+			</body>
+</html>
