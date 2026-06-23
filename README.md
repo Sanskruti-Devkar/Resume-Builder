@@ -16,3 +16,5 @@ A dynamic Resume Builder created with HTML, CSS, and JavaScript. This applicatio
 - HTML5
 - CSS3
 - JavaScript
+
+  # Live Demo : https://sanskruti-devkar.github.io/Resume-Builder/
